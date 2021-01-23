@@ -938,3 +938,11 @@ $mobile-max: 767px;
   margin-top: -94px;
   padding-top: 94px;
 }
+@include screen-mobile {
+  #feature,
+  #price,
+  #contact {
+    margin-top: -50px;
+    padding-top: 50px;
+  }
+}
