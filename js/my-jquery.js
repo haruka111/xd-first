@@ -1,4 +1,5 @@
 $(function () {
+//アコーディオンメニュー
   // 最初のコンテンツ以外は非表示
   $(".js-faq__accordion--content:not(:first-of-type)").css("display", "none");
   // 矢印の向きを変えておく
@@ -10,7 +11,7 @@ $(function () {
   });
 
 
-  //ハンバーガーメニュー
+//ハンバーガーメニュー
   $('#nav__toggle').click(function() {
     $(this).toggleClass('active');
 
@@ -52,7 +53,17 @@ $(function () {
     }
   });
 
+  //スムーススクロール
 
-  
-  
+  $('a[href^="#"]').click(function() {
+    // スクロールの速度
+    var speed = 400; // ミリ秒で記述
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top;
+    $('body,html').animate({scrollTop:position}, speed, 'swing');
+    return false;
+  });
+
+
 });
