@@ -31,6 +31,7 @@ ul {
   font-size: 14px;
 }
 
+
 //色
 $sub-ttl-color: #3BA6C9;
 $bg-color: #EEFBFB;
@@ -55,7 +56,7 @@ $mobile-max: 767px;
 .header {
   background-image: url(../img/circle.svg);
   background-repeat: no-repeat;
-  background-position: top -144px right -85px;
+  background-position: top -67px right -86px;
   background-size: 708px 743px;
   &__inner {
     margin: 0 auto;
@@ -104,6 +105,8 @@ $mobile-max: 767px;
   &__link {
     color: #333333;
     text-decoration: none;
+    display: flex;
+    align-items: center;
     &:hover,
     &:active {
       color: #333333;
@@ -119,8 +122,8 @@ $mobile-max: 767px;
 
   &__mv {
     width: 980px;
-    padding-top: 159px;
-    margin: 94px auto 113px auto;
+    padding-top: 80px;
+    margin: 94px auto 86px auto;
 
     &--ttl {
       margin-bottom: 40px;
@@ -226,10 +229,11 @@ $mobile-max: 767px;
   .header {
     background-position: top 80px right -20;
     background-size: 400px;
+
     &__nav {
       color: #333333;
       text-align: center;
-      width: 100%;
+      width: 100vw;
       height: auto;
       padding-bottom: 40px;
       background: #ffffff;
@@ -246,7 +250,7 @@ $mobile-max: 767px;
       //ナビバーの白枠
       &--mobile-top {
         height: 50px;
-        width: 100%;
+        width: 100vw;
         background: #ffffff;
         position: fixed;
         top: 0;
@@ -328,10 +332,13 @@ $mobile-max: 767px;
 }
 
 .feature {
+  &__wrap {
+    margin-top: 64px;
+    margin-bottom: 160px;
+  }
   &__ttl {
     font-size: 32px;
     text-align: center;
-    margin-top: 150px;
     font-weight: bold;
     margin-bottom: 57px;
     line-height: 1.44;
@@ -349,7 +356,7 @@ $mobile-max: 767px;
     margin-right: auto;
   }
   &__heading {
-    margin-bottom: 64px;
+    margin-bottom: 48px;
     font-size: 28px;
     font-weight: bold;
     text-align: center;
@@ -358,22 +365,23 @@ $mobile-max: 767px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 93px;
-
-    h3{
-      line-height: 1.8;
-      font-size: 24px;
-      margin-bottom: 54px;
-      font-weight: bold;
-    }
-    p {
-      line-height: 1.5;
-      font-weight: bold;
-    }
+    margin-bottom: 75px;
+  }
+  &__subttl{
+    line-height: 1.8;
+    font-size: 24px;
+    margin-bottom: 54px;
+    font-weight: bold;
+  }
+  &__txt {
+    font-weight: bold;
   }
 }
 @include screen-tablet {
   .feature {
+    &__wrap {
+      margin-bottom: 70px;
+    }
     &__inner {
       padding: 20px;
     }
@@ -381,7 +389,7 @@ $mobile-max: 767px;
       width: 300px;
       height: auto;
     }
-    &__txt {
+    &__txtbox {
       width: 400px;
     }
   }
@@ -403,28 +411,30 @@ $mobile-max: 767px;
         flex-direction: column-reverse;
       }
     }
-    &__txt {
+    &__txtbox {
       margin-top: 50px;
       width: auto;
     }
     &__subttl {
-      font-size: 20px;
+      font-size: 16px;
     }
-
+    &__txt {
+      font-size: 13px;
+    }
   }
 }
 
 .price {
-  background: $bg-color;
-  padding: 64px 20px 70px;
-
+  &__wrap {
+    background: $bg-color;
+    padding: 54px 20px 70px;
+  }
   &__inner {
     max-width: 926px;
     margin-left: auto;
     margin-right: auto;
   }
   &__ttl {
-    margin-top: 40px;
     margin-bottom: 70px;
     font-size: 32px;
     font-weight: bold;
@@ -774,11 +784,13 @@ $mobile-max: 767px;
 }
 
 .contact {
-  padding: 63px 20px 72px;
-  background: -moz-linear-gradient(to right,#05A5FA,#63FBD7 80%,#67FFD6); 
-  background: -webkit-linear-gradient(to right,#05A5FA,#63FBD7 80%,#67FFD6); 
-  background: linear-gradient(to right,#05A5FA,#63FBD7 80%,#67FFD6); 
-
+  
+  &__wrap {
+    padding: 63px 20px 72px;
+    background: -moz-linear-gradient(to right,#05A5FA,#63FBD7 80%,#67FFD6); 
+    background: -webkit-linear-gradient(to right,#05A5FA,#63FBD7 80%,#67FFD6); 
+    background: linear-gradient(to right,#05A5FA,#63FBD7 80%,#67FFD6); 
+  }
   &__ttl {
     font-size: 32px;
     text-align: center;
@@ -917,4 +929,12 @@ $mobile-max: 767px;
       font-size: 10px;
     }
   }
+}
+
+
+#feature,
+#price,
+#contact {
+  margin-top: -94px;
+  padding-top: 94px;
 }
