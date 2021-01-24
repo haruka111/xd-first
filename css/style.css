@@ -565,6 +565,7 @@ ul {
   border: 1px solid #E5E5E5;
   text-align: center;
   padding: 18px 42px 20px;
+  cursor: pointer;
   position: relative;
 }
 
